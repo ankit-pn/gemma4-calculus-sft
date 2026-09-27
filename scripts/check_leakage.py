@@ -16,6 +16,11 @@ import sympy as sp
 
 ROOT = Path(__file__).resolve().parent
 DATA = ROOT / "data"
+if not DATA.exists():  # repository layout: scripts/ and data/ are siblings
+    DATA = ROOT.parent / "data"
+OUTPUT = ROOT / "output"
+if not OUTPUT.exists():
+    OUTPUT = ROOT.parent / "output"
 X = sp.Symbol("x")
 
 
@@ -95,7 +100,13 @@ def main():
                 ordered.append(groups[family].pop()["expression"])
     digest = hashlib.sha256(json.dumps(ordered).encode()).hexdigest()
     print("  recomputed order digest:", digest)
-    for path in sorted((ROOT / "output").glob("train-*-summary.json")):
+    summaries = sorted(OUTPUT.glob("train-*-summary.json")) if OUTPUT.exists() else []
+    if not summaries:
+        results = ROOT.parent / "results"
+        summaries = sorted(results.glob("train-*-summary.json")) if results.exists() else []
+    if not summaries:
+        print("  (no training summaries found next to this script)")
+    for path in summaries:
         recorded = json.loads(path.read_text())["training_order_sha256"]
         print(f"  {path.name}: match = {recorded == digest}")
         assert recorded == digest
