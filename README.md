@@ -48,6 +48,18 @@ Reserved test results (240 problems, including a structural hold-out composition
 - **Hugging Face dataset** — [ankit-pn/gemma4-calculus-differentiation](https://huggingface.co/datasets/ankit-pn/gemma4-calculus-differentiation)
 - **Hugging Face model** — [ankit-pn/gemma4-e2b-calculus-lora](https://huggingface.co/ankit-pn/gemma4-e2b-calculus-lora) (selected adapter at the root, the other three learning-curve adapters under `learning-curve-adapters/`, per-question results under `results/`)
 
+## Data hygiene (leakage audit)
+
+`scripts/check_leakage.py` verifies, against the frozen files:
+
+- SHA-256 of every split matches `data/manifest.json`
+- **0** exact expression overlaps and **0** symbolically equivalent expressions between train/validation/test (SymPy canonical form)
+- **0** polynomial×trig products in train/validation; the 80 held-out composites exist only in test
+- The training-order digest recomputes to the value recorded by all four training runs (`993f9c3b…`), proving training used exactly `train.jsonl`
+- Answer overlap: 2/240 test rows (and 6/200 validation rows) have a gold derivative that coincides with a training answer. This is inherent to differentiation — functions differing by an additive constant share a derivative — and the inputs remain unseen. Reported for transparency, not treated as a defect.
+
+Separately: the *base* Gemma model may have seen similar textbook derivatives during pretraining. That exposure cannot be audited locally and is stated as a limitation; the claimed comparison is base vs. fine-tuned on identical, unseen-by-our-training questions.
+
 ## What "correct" means
 
 Answers are graded by **symbolic equivalence** with SymPy, not string matching. A `Final answer:` line is required; an equivalent but differently written derivative counts as correct.
