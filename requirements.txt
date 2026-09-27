@@ -1,0 +1,11 @@
+numpy
+sympy==1.14.0
+requests
+# GPU training (versions used in the published run)
+unsloth==2026.9.11
+trl==0.24.0
+datasets==4.3.0
+torch==2.8.0
+peft
+accelerate
+bitsandbytes

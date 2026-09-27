@@ -1,0 +1,11 @@
+{
+  "selected_size": 4096,
+  "rule": "highest validation accuracy, ties to smaller set",
+  "validation_correct_by_size": {
+    "128": 67,
+    "512": 57,
+    "2048": 126,
+    "4096": 147
+  },
+  "test_seen": false
+}

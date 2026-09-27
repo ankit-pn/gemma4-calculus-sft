@@ -1,0 +1,17 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+
+# Kaggle / Runpod working artifacts
+output/
+*.log
+
+# Virtual environments
+.venv/
+venv/
+
+# OS
+.DS_Store
+
+# Hugging Face upload staging (published to the HF hub instead)
+hf-model/

@@ -1,0 +1,33 @@
+{
+  "split": "test",
+  "n": 240,
+  "correct": 77,
+  "accuracy": 0.32083333333333336,
+  "parse_errors": 53,
+  "by_family": {
+    "polynomial": {
+      "correct": 32,
+      "n": 32
+    },
+    "power_chain": {
+      "correct": 17,
+      "n": 32
+    },
+    "product": {
+      "correct": 4,
+      "n": 32
+    },
+    "product_trig_chain": {
+      "correct": 14,
+      "n": 80
+    },
+    "rational": {
+      "correct": 2,
+      "n": 32
+    },
+    "trig_chain": {
+      "correct": 8,
+      "n": 32
+    }
+  }
+}

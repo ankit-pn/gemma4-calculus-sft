@@ -1,0 +1,11 @@
+{
+  "train_size": 128,
+  "steps": 32,
+  "train_loss": 0.8358456119894981,
+  "training_seconds": 89.5,
+  "training_order_sha256": "993f9c3bfce2ffe6b715340cd7b5a458a9a55252ea7571936425977c9bc7ae6f",
+  "model": "unsloth/gemma-4-E2B-it",
+  "r": 8,
+  "learning_rate": 0.0001,
+  "epochs": 1
+}

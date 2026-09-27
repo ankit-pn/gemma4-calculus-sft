@@ -1,0 +1,69 @@
+{
+  "selected_size": 4096,
+  "split": "test",
+  "overall": {
+    "base_correct": 77,
+    "lora_correct": 121,
+    "n": 240,
+    "gains": 71,
+    "losses": 27,
+    "net": 44,
+    "mcnemar_exact_two_sided_p": 1.011275213759831e-05
+  },
+  "by_family": {
+    "polynomial": {
+      "base_correct": 32,
+      "lora_correct": 32,
+      "n": 32,
+      "gains": 0,
+      "losses": 0,
+      "net": 0,
+      "mcnemar_exact_two_sided_p": 1.0
+    },
+    "power_chain": {
+      "base_correct": 17,
+      "lora_correct": 28,
+      "n": 32,
+      "gains": 15,
+      "losses": 4,
+      "net": 11,
+      "mcnemar_exact_two_sided_p": 0.0192108154296875
+    },
+    "product": {
+      "base_correct": 4,
+      "lora_correct": 13,
+      "n": 32,
+      "gains": 13,
+      "losses": 4,
+      "net": 9,
+      "mcnemar_exact_two_sided_p": 0.049041748046875
+    },
+    "product_trig_chain": {
+      "base_correct": 14,
+      "lora_correct": 5,
+      "n": 80,
+      "gains": 4,
+      "losses": 13,
+      "net": -9,
+      "mcnemar_exact_two_sided_p": 0.049041748046875
+    },
+    "rational": {
+      "base_correct": 2,
+      "lora_correct": 26,
+      "n": 32,
+      "gains": 25,
+      "losses": 1,
+      "net": 24,
+      "mcnemar_exact_two_sided_p": 8.046627044677734e-07
+    },
+    "trig_chain": {
+      "base_correct": 8,
+      "lora_correct": 17,
+      "n": 32,
+      "gains": 14,
+      "losses": 5,
+      "net": 9,
+      "mcnemar_exact_two_sided_p": 0.063568115234375
+    }
+  }
+}

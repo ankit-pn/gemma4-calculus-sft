@@ -1,0 +1,25 @@
+{
+  "split": "validation",
+  "n": 5,
+  "correct": 3,
+  "accuracy": 0.6,
+  "parse_errors": 0,
+  "by_family": {
+    "polynomial": {
+      "correct": 1,
+      "n": 1
+    },
+    "power_chain": {
+      "correct": 0,
+      "n": 1
+    },
+    "product": {
+      "correct": 2,
+      "n": 2
+    },
+    "trig_chain": {
+      "correct": 0,
+      "n": 1
+    }
+  }
+}

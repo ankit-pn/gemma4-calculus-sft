@@ -1,0 +1,24 @@
+{
+  "seed": 20260927,
+  "generator": "generate.py",
+  "sympy_version": "1.14.0",
+  "split_sizes": {
+    "train": 4096,
+    "validation": 200,
+    "test": 240
+  },
+  "training_families": [
+    "polynomial",
+    "product",
+    "power_chain",
+    "trig_chain",
+    "rational"
+  ],
+  "structural_holdout_family": "product_trig_chain",
+  "sha256": {
+    "train": "c71510dbba3bf8d26e6f7e46c6ce6ad6066083eaf3997f417377840d9fffa060",
+    "validation": "283d3dc67586dc4020ec246426e3c4afa27a3a71719fa9b87e56432bb22059cb",
+    "test": "4fa4776bdf548025fc4fb7c86524a719fb2bdec56863d1bf44bda3e03f84d6af"
+  },
+  "policy": "Evaluate base and SFT checkpoints on validation; reserve test for the final pre/post comparison."
+}
