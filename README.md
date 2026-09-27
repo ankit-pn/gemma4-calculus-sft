@@ -43,6 +43,11 @@ Validation accuracy by problem family (n = 40 each):
 
 Reserved test results (240 problems, including a structural hold-out composition not present in training) are in [`results/final-report.json`](results/final-report.json).
 
+## Published artifacts
+
+- **Hugging Face dataset** — [ankit-pn/gemma4-calculus-differentiation](https://huggingface.co/datasets/ankit-pn/gemma4-calculus-differentiation)
+- **Hugging Face model** — [ankit-pn/gemma4-e2b-calculus-lora](https://huggingface.co/ankit-pn/gemma4-e2b-calculus-lora) (selected adapter at the root, the other three learning-curve adapters under `learning-curve-adapters/`, per-question results under `results/`)
+
 ## What "correct" means
 
 Answers are graded by **symbolic equivalence** with SymPy, not string matching. A `Final answer:` line is required; an equivalent but differently written derivative counts as correct.
