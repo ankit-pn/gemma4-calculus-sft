@@ -12,6 +12,15 @@ tags:
 - sft
 size_categories:
 - 1K<n<10K
+configs:
+- config_name: default
+  data_files:
+  - split: train
+    path: data/train.jsonl
+  - split: validation
+    path: data/validation.jsonl
+  - split: test
+    path: data/test.jsonl
 ---
 
 # Gemma 4 Calculus Differentiation (synthetic, symbolic)
